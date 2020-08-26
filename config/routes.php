@@ -53,6 +53,8 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $builder->connect('/login', ['controller' => 'Pages', 'action' => 'display', 'login']);
     $builder->connect('/registration', ['controller' => 'Pages', 'action' => 'display', 'registration']);
+    $builder->connect('/booking', ['controller' => 'Pages', 'action' => 'display', 'booking']);
+    $builder->connect('/userlist', ['controller' => 'Pages', 'action' => 'display', 'userlist']);
 
 
     /*
