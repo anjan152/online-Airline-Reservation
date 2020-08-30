@@ -290,7 +290,7 @@ return [
             'driver' => Sqlite::class,
             'persistent' => false,
             'timezone' => 'UTC',
-            'database'=> 'db/mydatabase.db',
+            'database'=> 'db/project.db',
 
             /**
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
