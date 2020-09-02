@@ -23,28 +23,16 @@
                     <td><?= $flight->has('aircraft_type') ? $this->Html->link($flight->aircraft_type->id, ['controller' => 'AircraftTypes', 'action' => 'view', $flight->aircraft_type->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Date') ?></th>
-                    <td><?= h($flight->date) ?></td>
+                    <th><?= __('From Place') ?></th>
+                    <td><?= h($flight->from_place) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('From Date') ?></th>
-                    <td><?= h($flight->from_date) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('To Date') ?></th>
-                    <td><?= h($flight->to_date) ?></td>
+                    <th><?= __('To Place') ?></th>
+                    <td><?= h($flight->to_place) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Counter') ?></th>
                     <td><?= h($flight->counter) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Departs') ?></th>
-                    <td><?= h($flight->departs) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Arrives') ?></th>
-                    <td><?= h($flight->arrives) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
@@ -63,6 +51,7 @@
                         <tr>
                             <th><?= __('Id') ?></th>
                             <th><?= __('User Id') ?></th>
+                            <th><?= __('Date') ?></th>
                             <th><?= __('Flight Id') ?></th>
                             <th><?= __('Status') ?></th>
                             <th><?= __('Frequent Flyer Discount') ?></th>
@@ -74,6 +63,7 @@
                         <tr>
                             <td><?= h($bookings->id) ?></td>
                             <td><?= h($bookings->user_id) ?></td>
+                            <td><?= h($bookings->date) ?></td>
                             <td><?= h($bookings->flight_id) ?></td>
                             <td><?= h($bookings->status) ?></td>
                             <td><?= h($bookings->frequent_flyer_discount) ?></td>
@@ -83,6 +73,37 @@
                                 <?= $this->Html->link(__('View'), ['controller' => 'Bookings', 'action' => 'view', $bookings->id]) ?>
                                 <?= $this->Html->link(__('Edit'), ['controller' => 'Bookings', 'action' => 'edit', $bookings->id]) ?>
                                 <?= $this->Form->postLink(__('Delete'), ['controller' => 'Bookings', 'action' => 'delete', $bookings->id], ['confirm' => __('Are you sure you want to delete # {0}?', $bookings->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="related">
+                <h4><?= __('Related Flight Schedules') ?></h4>
+                <?php if (!empty($flight->flight_schedules)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Flight Id') ?></th>
+                            <th><?= __('Day') ?></th>
+                            <th><?= __('Departs') ?></th>
+                            <th><?= __('Arrives') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($flight->flight_schedules as $flightSchedules) : ?>
+                        <tr>
+                            <td><?= h($flightSchedules->id) ?></td>
+                            <td><?= h($flightSchedules->flight_id) ?></td>
+                            <td><?= h($flightSchedules->day) ?></td>
+                            <td><?= h($flightSchedules->departs) ?></td>
+                            <td><?= h($flightSchedules->arrives) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'FlightSchedules', 'action' => 'view', $flightSchedules->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'FlightSchedules', 'action' => 'edit', $flightSchedules->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'FlightSchedules', 'action' => 'delete', $flightSchedules->id], ['confirm' => __('Are you sure you want to delete # {0}?', $flightSchedules->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

@@ -56,8 +56,8 @@ class AdminsTable extends Table
 
         $validator
             ->scalar('username')
-            ->maxLength('username', 20)
-            ->allowEmptyString('username');
+            ->maxLength('username', 20);
+            
 
         $validator
             ->scalar('password')

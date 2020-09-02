@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\AircraftTypesTable&\Cake\ORM\Association\BelongsTo $AircraftTypes
  * @property \App\Model\Table\BookingsTable&\Cake\ORM\Association\HasMany $Bookings
+ * @property \App\Model\Table\FlightSchedulesTable&\Cake\ORM\Association\HasMany $FlightSchedules
  *
  * @method \App\Model\Entity\Flight newEmptyEntity()
  * @method \App\Model\Entity\Flight newEntity(array $data, array $options = [])
@@ -50,6 +51,9 @@ class FlightsTable extends Table
         $this->hasMany('Bookings', [
             'foreignKey' => 'flight_id',
         ]);
+        $this->hasMany('FlightSchedules', [
+            'foreignKey' => 'flight_id',
+        ]);
     }
 
     /**
@@ -69,34 +73,19 @@ class FlightsTable extends Table
             ->allowEmptyString('price');
 
         $validator
-            ->scalar('date')
-            ->maxLength('date', 30)
-            ->allowEmptyString('date');
+            ->scalar('from_place')
+            ->maxLength('from_place', 50)
+            ->allowEmptyString('from_place');
 
         $validator
-            ->scalar('from_date')
-            ->maxLength('from_date', 50)
-            ->allowEmptyString('from_date');
-
-        $validator
-            ->scalar('to_date')
-            ->maxLength('to_date', 50)
-            ->allowEmptyString('to_date');
+            ->scalar('to_place')
+            ->maxLength('to_place', 50)
+            ->allowEmptyString('to_place');
 
         $validator
             ->scalar('counter')
             ->maxLength('counter', 30)
             ->allowEmptyString('counter');
-
-        $validator
-            ->scalar('departs')
-            ->maxLength('departs', 30)
-            ->allowEmptyString('departs');
-
-        $validator
-            ->scalar('arrives')
-            ->maxLength('arrives', 50)
-            ->allowEmptyString('arrives');
 
         return $validator;
     }

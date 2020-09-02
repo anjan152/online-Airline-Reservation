@@ -27,6 +27,7 @@ class FlightsTableTest extends TestCase
         'app.Flights',
         'app.AircraftTypes',
         'app.Bookings',
+        'app.FlightSchedules',
     ];
 
     /**

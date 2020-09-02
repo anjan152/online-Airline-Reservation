@@ -36,7 +36,7 @@ class FlightsController extends AppController
     public function view($id = null)
     {
         $flight = $this->Flights->get($id, [
-            'contain' => ['AircraftTypes', 'Bookings'],
+            'contain' => ['AircraftTypes', 'Bookings', 'FlightSchedules'],
         ]);
 
         $this->set(compact('flight'));

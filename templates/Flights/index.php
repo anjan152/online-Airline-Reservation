@@ -14,12 +14,9 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('aircraft_type_id') ?></th>
                     <th><?= $this->Paginator->sort('price') ?></th>
-                    <th><?= $this->Paginator->sort('date') ?></th>
-                    <th><?= $this->Paginator->sort('from_date') ?></th>
-                    <th><?= $this->Paginator->sort('to_date') ?></th>
+                    <th><?= $this->Paginator->sort('from_place') ?></th>
+                    <th><?= $this->Paginator->sort('to_place') ?></th>
                     <th><?= $this->Paginator->sort('counter') ?></th>
-                    <th><?= $this->Paginator->sort('departs') ?></th>
-                    <th><?= $this->Paginator->sort('arrives') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -29,12 +26,9 @@
                     <td><?= $this->Number->format($flight->id) ?></td>
                     <td><?= $flight->has('aircraft_type') ? $this->Html->link($flight->aircraft_type->id, ['controller' => 'AircraftTypes', 'action' => 'view', $flight->aircraft_type->id]) : '' ?></td>
                     <td><?= $this->Number->format($flight->price) ?></td>
-                    <td><?= h($flight->date) ?></td>
-                    <td><?= h($flight->from_date) ?></td>
-                    <td><?= h($flight->to_date) ?></td>
+                    <td><?= h($flight->from_place) ?></td>
+                    <td><?= h($flight->to_place) ?></td>
                     <td><?= h($flight->counter) ?></td>
-                    <td><?= h($flight->departs) ?></td>
-                    <td><?= h($flight->arrives) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $flight->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $flight->id]) ?>

@@ -11,15 +11,13 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int|null $aircraft_type_id
  * @property float|null $price
- * @property string|null $date
- * @property string|null $from_date
- * @property string|null $to_date
+ * @property string|null $from_place
+ * @property string|null $to_place
  * @property string|null $counter
- * @property string|null $departs
- * @property string|null $arrives
  *
  * @property \App\Model\Entity\AircraftType $aircraft_type
  * @property \App\Model\Entity\Booking[] $bookings
+ * @property \App\Model\Entity\FlightSchedule[] $flight_schedules
  */
 class Flight extends Entity
 {
@@ -35,13 +33,11 @@ class Flight extends Entity
     protected $_accessible = [
         'aircraft_type_id' => true,
         'price' => true,
-        'date' => true,
-        'from_date' => true,
-        'to_date' => true,
+        'from_place' => true,
+        'to_place' => true,
         'counter' => true,
-        'departs' => true,
-        'arrives' => true,
         'aircraft_type' => true,
         'bookings' => true,
+        'flight_schedules' => true,
     ];
 }

@@ -19,12 +19,9 @@
                 <?php
                     echo $this->Form->control('aircraft_type_id', ['options' => $aircraftTypes, 'empty' => true]);
                     echo $this->Form->control('price');
-                    echo $this->Form->control('date');
-                    echo $this->Form->control('from_date');
-                    echo $this->Form->control('to_date');
+                    echo $this->Form->control('from_place');
+                    echo $this->Form->control('to_place');
                     echo $this->Form->control('counter');
-                    echo $this->Form->control('departs');
-                    echo $this->Form->control('arrives');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
