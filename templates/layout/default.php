@@ -11,23 +11,36 @@
     <?= $this->Html->meta('icon') ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+    
+  
+    
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+   
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
-        </div>
-        <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/4/">API</a>
-        </div>
-    </nav>
+<div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Marketing Site</li>
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#">Three</a></li>
+          <li><a href="#">Four</a></li>
+          <li><a href="#">Five</a></li>
+          <li><a href="#">Six</a></li>
+        </ul>
+      </div>
+    </div>
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
