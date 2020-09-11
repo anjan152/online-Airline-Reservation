@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   
 
-    
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'home']) ?>
+
   
     
 

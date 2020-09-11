@@ -43,8 +43,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'home']) ?>
-
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -77,48 +77,48 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
         <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
         <li class="orbit-slide is-active">
-          <img src="https://placehold.it/2000x750">
+          <img src="./img/airport.jpg">
         </li>
         <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
+          <img src="./img/airline.jpg">
         </li>
         <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
+          <img src="./img/woman.jpg">
         </li>
         <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
+          <img src="./img/aircraft.jpg">
         </li>
       </ul>
     </div>
 
     <div class="row column text-center">
-      <h2>Our Newest Products</h2>
+      <h2>Customer Review</h2>
       <hr>
     </div>
 
     <div class="row small-up-2 large-up-4">
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
+        <img class="thumbnail" src="./img/girl.jpg">
+        <h5>Anil Kumar</h5>
+        <p>good services</p>
         <a href="#" class="button expanded">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
+        <img class="thumbnail" src="./img/woman.jpg">
+        <h5>Anjana</h5>
+        <p>best airline</p>
         <a href="#" class="button expanded">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
+        <img class="thumbnail" src="./img/workplace.jpg">
+        <h5>Nagesh</h5>
+        <p>wonderful help from staff</p>
         <a href="#" class="button expanded">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
+        <img class="thumbnail" src="./img/urban.jpg">
+        <h5>Vineeth</h5>
+        <p>An excellent choice to fly</p>
         <a href="#" class="button expanded">Buy</a>
       </div>
     </div>
