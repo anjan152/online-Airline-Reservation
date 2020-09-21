@@ -61,8 +61,9 @@ class AircraftTypesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->integer('seat_capacity')
-            ->allowEmptyString('seat_capacity');
+            ->scalar('aircraft_name')
+            ->maxLength('aircraft_name', 60)
+            ->allowEmptyString('aircraft_name');
 
         $validator
             ->integer('first_class')

@@ -117,7 +117,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
       </div>
       <div class="column">
         <img class="thumbnail" src="./img/urban.jpg">
-        <h5>Vineeth</h5>
+        <h5>Varna</h5>
         <p>An excellent choice to fly</p>
         <a href="#" class="button expanded">Buy</a>
       </div>
@@ -134,43 +134,43 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <hr>
 
     <div class="row column text-center">
-      <h2>Some Other Neat Products</h2>
+      <h2>Flight Informations</h2>
       <hr>
     </div>
 
     <div class="row small-up-2 medium-up-3 large-up-6">
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
+        <img class="thumbnail" src="./img/eiffel-tower-.jpg">
+        <h5> Wonderful Benefits Of Traveling</h5>
+        <p>Traveling is wonderful in many ways. It captures us with a sense of wanderlust and has us longing for more destinations to visit, cultures to experience, food to eat, and people to meet. As amazing as traveling is, most of us think we need to wait until our later years to really explore a lot of the world. I want to inspire you to travel more now and I will do that by sharing 9 wonderful benefits of traveling so you can take the leap of faith you’ve been waiting for.</p>
+        <a href="https://www.lifehack.org/articles/lifestyle/9-wonderful-benefits-traveling.html" class="button small expanded hollow">Buy</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="./img/desert.jpg">
         <h5>Nulla At Nulla Justo, Eget</h5>
         <p>$400</p>
         <a href="#" class="button small expanded hollow">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
+        <img class="thumbnail" src="./img/globe.jpg">
         <h5>Nulla At Nulla Justo, Eget</h5>
         <p>$400</p>
         <a href="#" class="button small expanded hollow">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
+        <img class="thumbnail" src="./img/india.jpg">
         <h5>Nulla At Nulla Justo, Eget</h5>
         <p>$400</p>
         <a href="#" class="button small expanded hollow">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
+        <img class="thumbnail" src="./img/airbus.jpg">
         <h5>Nulla At Nulla Justo, Eget</h5>
         <p>$400</p>
         <a href="#" class="button small expanded hollow">Buy</a>
       </div>
       <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
+        <img class="thumbnail" src="./img/airline (2).jpg">
         <h5>Nulla At Nulla Justo, Eget</h5>
         <p>$400</p>
         <a href="#" class="button small expanded hollow">Buy</a>

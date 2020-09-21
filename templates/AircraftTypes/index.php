@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('seat_capacity') ?></th>
+                    <th><?= $this->Paginator->sort('aircraft_name') ?></th>
                     <th><?= $this->Paginator->sort('first_class') ?></th>
                     <th><?= $this->Paginator->sort('second_class') ?></th>
                     <th><?= $this->Paginator->sort('third_class') ?></th>
@@ -23,7 +23,7 @@
                 <?php foreach ($aircraftTypes as $aircraftType): ?>
                 <tr>
                     <td><?= $this->Number->format($aircraftType->id) ?></td>
-                    <td><?= $this->Number->format($aircraftType->seat_capacity) ?></td>
+                    <td><?= h($aircraftType->aircraft_name) ?></td>
                     <td><?= $this->Number->format($aircraftType->first_class) ?></td>
                     <td><?= $this->Number->format($aircraftType->second_class) ?></td>
                     <td><?= $this->Number->format($aircraftType->third_class) ?></td>

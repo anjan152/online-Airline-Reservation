@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * AircraftType Entity
  *
  * @property int $id
- * @property int|null $seat_capacity
+ * @property string|null $aircraft_name
  * @property int|null $first_class
  * @property int|null $second_class
  * @property int|null $third_class
@@ -28,7 +28,7 @@ class AircraftType extends Entity
      * @var array
      */
     protected $_accessible = [
-        'seat_capacity' => true,
+        'aircraft_name' => true,
         'first_class' => true,
         'second_class' => true,
         'third_class' => true,

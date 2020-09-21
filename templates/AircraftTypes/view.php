@@ -19,12 +19,12 @@
             <h3><?= h($aircraftType->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($aircraftType->id) ?></td>
+                    <th><?= __('Aircraft Name') ?></th>
+                    <td><?= h($aircraftType->aircraft_name) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Seat Capacity') ?></th>
-                    <td><?= $this->Number->format($aircraftType->seat_capacity) ?></td>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($aircraftType->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('First Class') ?></th>

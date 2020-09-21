@@ -22,7 +22,7 @@
             <fieldset>
                 <legend><?= __('Edit Aircraft Type') ?></legend>
                 <?php
-                    echo $this->Form->control('seat_capacity');
+                    echo $this->Form->control('aircraft_name');
                     echo $this->Form->control('first_class');
                     echo $this->Form->control('second_class');
                     echo $this->Form->control('third_class');

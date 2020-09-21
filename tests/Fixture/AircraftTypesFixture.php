@@ -18,7 +18,7 @@ class AircraftTypesFixture extends TestFixture
     // phpcs:disable
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'autoIncrement' => true, 'precision' => null, 'comment' => null],
-        'seat_capacity' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'precision' => null, 'comment' => null, 'autoIncrement' => null],
+        'aircraft_name' => ['type' => 'string', 'length' => 60, 'null' => true, 'default' => null, 'precision' => null, 'comment' => null, 'collate' => null],
         'first_class' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'precision' => null, 'comment' => null, 'autoIncrement' => null],
         'second_class' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'precision' => null, 'comment' => null, 'autoIncrement' => null],
         'third_class' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'precision' => null, 'comment' => null, 'autoIncrement' => null],
@@ -37,7 +37,7 @@ class AircraftTypesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'seat_capacity' => 1,
+                'aircraft_name' => 'Lorem ipsum dolor sit amet',
                 'first_class' => 1,
                 'second_class' => 1,
                 'third_class' => 1,
