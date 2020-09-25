@@ -40,7 +40,7 @@ class AircraftTypesTable extends Table
         parent::initialize($config);
 
         $this->setTable('aircraft_types');
-        $this->setDisplayField('id');
+        $this->setDisplayField('aircraft_name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Flights', [

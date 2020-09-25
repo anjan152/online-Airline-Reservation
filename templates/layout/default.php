@@ -35,10 +35,9 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><a href="#">Three</a></li>
-          <li><a href="#">Four</a></li>
-          <li><a href="#">Five</a></li>
-          <li><a href="#">Six</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+          
+          
         </ul>
       </div>
     </div>
