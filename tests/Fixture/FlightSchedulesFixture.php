@@ -39,8 +39,8 @@ class FlightSchedulesFixture extends TestFixture
                 'id' => 1,
                 'flight_id' => 1,
                 'day' => 'Lorem ipsum dolor ',
-                'departs' => '2020-09-09 11:22:33',
-                'arrives' => '2020-09-09 11:22:33',
+                'departs' => '2020-10-01 15:33:02',
+                'arrives' => '2020-10-01 15:33:02',
             ],
         ];
         parent::init();

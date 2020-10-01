@@ -18,7 +18,6 @@ class AircraftTypesController extends AppController
      */
     public function index()
     {
-        $this->Authorization->skipAuthorization();
         $aircraftTypes = $this->paginate($this->AircraftTypes);
 
         $this->set(compact('aircraftTypes'));
@@ -33,7 +32,6 @@ class AircraftTypesController extends AppController
      */
     public function view($id = null)
     {
-        $this->Authorization->skipAuthorization();
         $aircraftType = $this->AircraftTypes->get($id, [
             'contain' => ['Flights'],
         ]);
@@ -48,9 +46,7 @@ class AircraftTypesController extends AppController
      */
     public function add()
     {
-
         $aircraftType = $this->AircraftTypes->newEmptyEntity();
-        $this->Authorization->authorize($aircraftType);
         if ($this->request->is('post')) {
             $aircraftType = $this->AircraftTypes->patchEntity($aircraftType, $this->request->getData());
             if ($this->AircraftTypes->save($aircraftType)) {
@@ -75,8 +71,6 @@ class AircraftTypesController extends AppController
         $aircraftType = $this->AircraftTypes->get($id, [
             'contain' => [],
         ]);
-        $this->Authorization->authorize($aircraftType);
-
         if ($this->request->is(['patch', 'post', 'put'])) {
             $aircraftType = $this->AircraftTypes->patchEntity($aircraftType, $this->request->getData());
             if ($this->AircraftTypes->save($aircraftType)) {
@@ -100,8 +94,6 @@ class AircraftTypesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $aircraftType = $this->AircraftTypes->get($id);
-        $this->Authorization->authorize($aircraftType);
-
         if ($this->AircraftTypes->delete($aircraftType)) {
             $this->Flash->success(__('The aircraft type has been deleted.'));
         } else {

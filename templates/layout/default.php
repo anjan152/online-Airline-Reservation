@@ -11,7 +11,7 @@
     <?= $this->Html->meta('icon') ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    
   
 
     <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'home']) ?>
@@ -25,22 +25,22 @@
    
 </head>
 <body>
-<div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">Marketing Site</li>
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="/users/logout">Logout</a></li>
-          
-          
-        </ul>
-      </div>
-    </div>
+<nav class="top-nav">
+        <div class="top-nav-title">
+            <a href="<?= $this->Url->build('/') ?>"><span>ONLINE</span>AIRLINE RESERVATION</a>
+        </div>
+        <div class="top-nav-links">
+            <a target="_blank" rel="noopener" href="/flights">FLIGHTS</a>
+            <a target="_blank" rel="noopener" href="/bookings">BOOKINGS</a>
+            <a target="_blank" rel="noopener" href="/users">USERS</a>
+            
+            
+        
+            <a target="_blank" rel="noopener" href="/flight-schedules">FLIGHT SCHEDULES</a>
+            <a target="_blank" rel="noopener" href="/users/logout">LOGOUT</a>
+        </div>
+    </nav>
+ 
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>

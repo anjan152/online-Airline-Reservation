@@ -16,7 +16,7 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="aircraftTypes view content">
-            <h3><?= h($aircraftType->id) ?></h3>
+            <h3><?= h($aircraftType->aircraft_name) ?></h3>
             <table>
                 <tr>
                     <th><?= __('Aircraft Name') ?></th>
