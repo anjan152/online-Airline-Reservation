@@ -105,10 +105,11 @@ public function logout()
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
+            $result=$this->Users->save($user);
+            if ($result) {
                 $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                $this->Authentication->setIdentity($result);
+                return $this->redirect(['action' => 'view',$result->id]);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }

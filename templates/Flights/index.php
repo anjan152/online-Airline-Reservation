@@ -5,7 +5,17 @@
  */
 ?>
 <div class="flights index content">
+    <?php 
+    if($user->is_admin)
+    {
+
+    
+    
+    ?>
+    
+    
     <?= $this->Html->link(__('New Flight'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <?php } ?>
     <h3><?= __('Flights') ?></h3>
     <div class="table-responsive">
         <table>
@@ -30,9 +40,20 @@
                     <td><?= h($flight->to_place) ?></td>
                     <td><?= h($flight->counter) ?></td>
                     <td class="actions">
+                    <?php 
+    if($user->is_admin)
+    { ?>
+
                         <?= $this->Html->link(__('View'), ['action' => 'view', $flight->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $flight->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $flight->id], ['confirm' => __('Are you sure you want to delete # {0}?', $flight->id)]) ?>
+    <?php } 
+    else{
+
+    
+    ?>
+    <?= $this->Form->postLink(__('Book'), ['action' => 'buy', $flight->id], ['confirm' => __('Are you sure you want to book this flight ?')]) ?>
+    <?php  } ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

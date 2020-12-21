@@ -23,8 +23,8 @@ class FlightsController extends AppController
             'contain' => ['AircraftTypes'],
         ];
         $flights = $this->paginate($this->Flights);
-
-        $this->set(compact('flights'));
+        $user=$this->Authentication->getIdentity();
+        $this->set(compact('flights','user'));
     }
 
     /**

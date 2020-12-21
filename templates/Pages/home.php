@@ -55,17 +55,17 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text">Marketing Site</li>
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
+          <li class="menu-text">ONLINE AIRLINE RESERVATION</li>
+          
+          
         </ul>
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><a href="#">Three</a></li>
-          <li><a href="#">Four</a></li>
-          <li><a href="#">Five</a></li>
-          <li><a href="#">Six</a></li>
+          <li><a href="/users/login">LOGIN</a></li>
+          <li><a href="/users/add">REGISTER</a></li>
+          
+          
         </ul>
       </div>
     </div>

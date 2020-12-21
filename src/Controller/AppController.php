@@ -43,6 +43,19 @@ class AppController extends Controller
     // for all controllers in our application, make index and view
     // actions public, skipping the authentication check
     $this->Authentication->addUnauthenticatedActions(['index', 'view','display']);
+    $user=$this->Authentication->getIdentity();
+    if($user)
+    {
+        if($user->is_admin)
+        {
+            $this->viewBuilder()->setLayout("admin");
+        }
+        else
+        {
+        $this->viewBuilder()->setLayout("customer");
+        }
+    }
+
 }
     public function initialize(): void
     {

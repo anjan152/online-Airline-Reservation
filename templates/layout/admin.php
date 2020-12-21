@@ -29,13 +29,16 @@
         <div class="top-nav-title">
             <a href="<?= $this->Url->build('/') ?>"><span>ONLINE</span>AIRLINE RESERVATION</a>
         </div>
+        <div class="top-nav-links">
+            <a target="_blank" rel="noopener" href="/flights">FLIGHTS</a>
+            <a target="_blank" rel="noopener" href="/bookings">BOOKINGS</a>
+            <a target="_blank" rel="noopener" href="/users">USERS</a>
+            
+            
         
-            
-            
-            
-            
-        
-            
+            <a target="_blank" rel="noopener" href="/flight-schedules">FLIGHT SCHEDULES</a>
+            <a target="_blank" rel="noopener" href="/users/logout">LOGOUT</a>
+        </div>
     </nav>
  
     <main class="main">
