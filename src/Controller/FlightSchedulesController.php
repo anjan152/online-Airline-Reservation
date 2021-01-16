@@ -21,6 +21,7 @@ class FlightSchedulesController extends AppController
         $this->paginate = [
             'contain' => ['Flights'],
         ];
+        $this->Authorization->skipAuthorization();
         $flightSchedules = $this->paginate($this->FlightSchedules);
 
         $this->set(compact('flightSchedules'));
@@ -38,6 +39,7 @@ class FlightSchedulesController extends AppController
         $flightSchedule = $this->FlightSchedules->get($id, [
             'contain' => ['Flights'],
         ]);
+        $this->Authorization->skipAuthorization();
 
         $this->set(compact('flightSchedule'));
     }
@@ -49,6 +51,9 @@ class FlightSchedulesController extends AppController
      */
     public function add()
     {
+        $flightSchedule = $this->FlightSchedule->newEmptyEntity();
+        $this->Authorization->authorize($flightSchedule);
+ 
         $flightSchedule = $this->FlightSchedules->newEmptyEntity();
         if ($this->request->is('post')) {
             $flightSchedule = $this->FlightSchedules->patchEntity($flightSchedule, $this->request->getData());
@@ -72,6 +77,9 @@ class FlightSchedulesController extends AppController
      */
     public function edit($id = null)
     {
+        $flightSchedule = $this->FlightSchedule->newEmptyEntity();
+        $this->Authorization->authorize($flightSchedule);
+ 
         $flightSchedule = $this->FlightSchedules->get($id, [
             'contain' => [],
         ]);
@@ -97,6 +105,9 @@ class FlightSchedulesController extends AppController
      */
     public function delete($id = null)
     {
+        $flightSchedule = $this->FlightSchedule->newEmptyEntity();
+        $this->Authorization->authorize($flightSchedule);
+ 
         $this->request->allowMethod(['post', 'delete']);
         $flightSchedule = $this->FlightSchedules->get($id);
         if ($this->FlightSchedules->delete($flightSchedule)) {
