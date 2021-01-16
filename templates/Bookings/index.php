@@ -5,7 +5,7 @@
  */
 ?>
 <div class="bookings index content">
-    <?= $this->Html->link(__('New Booking'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    
     <h3><?= __('Bookings') ?></h3>
     <div class="table-responsive">
         <table>

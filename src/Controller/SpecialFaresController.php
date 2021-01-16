@@ -18,6 +18,7 @@ class SpecialFaresController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $specialFares = $this->paginate($this->SpecialFares);
 
         $this->set(compact('specialFares'));
@@ -32,6 +33,7 @@ class SpecialFaresController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $specialFare = $this->SpecialFares->get($id, [
             'contain' => [],
         ]);
@@ -46,6 +48,9 @@ class SpecialFaresController extends AppController
      */
     public function add()
     {
+        $specialFares= $this->SpecialFares->newEmptyEntity();
+        $this->Authorization->authorize($specialFares);
+
         $specialFare = $this->SpecialFares->newEmptyEntity();
         if ($this->request->is('post')) {
             $specialFare = $this->SpecialFares->patchEntity($specialFare, $this->request->getData());
@@ -68,6 +73,9 @@ class SpecialFaresController extends AppController
      */
     public function edit($id = null)
     {
+        $specialFare= $this->SpecialFare->newEmptyEntity();
+        $this->Authorization->authorize($specialFare);
+
         $specialFare = $this->SpecialFares->get($id, [
             'contain' => [],
         ]);
@@ -92,6 +100,9 @@ class SpecialFaresController extends AppController
      */
     public function delete($id = null)
     {
+        $specialFare= $this->SpecialFare->newEmptyEntity();
+        $this->Authorization->authorize($specialFare);
+
         $this->request->allowMethod(['post', 'delete']);
         $specialFare = $this->SpecialFares->get($id);
         if ($this->SpecialFares->delete($specialFare)) {

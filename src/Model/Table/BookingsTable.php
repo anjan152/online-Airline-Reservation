@@ -51,7 +51,7 @@ class BookingsTable extends Table
         $this->belongsTo('Flights', [
             'foreignKey' => 'flight_id',
         ]);
-        $this->belongsTo('Classes', [
+        $this->belongsTo('FlightClasses', [
             'foreignKey' => 'class_id',
         ]);
     }

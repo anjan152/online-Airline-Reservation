@@ -18,6 +18,7 @@ class FlightClassesController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $flightClasses = $this->paginate($this->FlightClasses);
 
         $this->set(compact('flightClasses'));
@@ -32,6 +33,7 @@ class FlightClassesController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $flightClass = $this->FlightClasses->get($id, [
             'contain' => [],
         ]);
@@ -46,6 +48,9 @@ class FlightClassesController extends AppController
      */
     public function add()
     {
+        $flightClasses= $this->FlightClasses->newEmptyEntity();
+        $this->Authorization->authorize($flightClasses);
+
         $flightClass = $this->FlightClasses->newEmptyEntity();
         if ($this->request->is('post')) {
             $flightClass = $this->FlightClasses->patchEntity($flightClass, $this->request->getData());
@@ -68,6 +73,9 @@ class FlightClassesController extends AppController
      */
     public function edit($id = null)
     {
+        $flightClasses = $this->FlightClasses->newEmptyEntity();
+        $this->Authorization->authorize($flightClass);
+
         $flightClass = $this->FlightClasses->get($id, [
             'contain' => [],
         ]);
@@ -92,6 +100,9 @@ class FlightClassesController extends AppController
      */
     public function delete($id = null)
     {
+        $flightClasses = $this->FlightClasses->newEmptyEntity();
+        $this->Authorization->authorize($flightClasses);
+
         $this->request->allowMethod(['post', 'delete']);
         $flightClass = $this->FlightClasses->get($id);
         if ($this->FlightClasses->delete($flightClass)) {

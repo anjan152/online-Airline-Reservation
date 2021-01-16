@@ -19,8 +19,9 @@ class BookingsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'Flights', 'Classes'],
+            'contain' => ['Users', 'Flights', 'FlightClasses'],
         ];
+        $this->Authorization->skipAuthorization();
         $bookings = $this->paginate($this->Bookings);
 
         $this->set(compact('bookings'));
@@ -36,9 +37,9 @@ class BookingsController extends AppController
     public function view($id = null)
     {
         $booking = $this->Bookings->get($id, [
-            'contain' => ['Users', 'Flights', 'Classes'],
+            'contain' => ['Users', 'Flights', 'FlightClasses'],
         ]);
-
+        $this->Authorization->skipAuthorization();
         $this->set(compact('booking'));
     }
 
@@ -61,8 +62,8 @@ class BookingsController extends AppController
         }
         $users = $this->Bookings->Users->find('list', ['limit' => 200]);
         $flights = $this->Bookings->Flights->find('list', ['limit' => 200]);
-        $classes = $this->Bookings->Classes->find('list', ['limit' => 200]);
-        $this->set(compact('booking', 'users', 'flights', 'classes'));
+        $flightClasses = $this->Bookings->flightClasses->find('list', ['limit' => 200]);
+        $this->set(compact('booking', 'users', 'flights', 'FlightClasses'));
     }
 
     /**
@@ -89,7 +90,7 @@ class BookingsController extends AppController
         $users = $this->Bookings->Users->find('list', ['limit' => 200]);
         $flights = $this->Bookings->Flights->find('list', ['limit' => 200]);
         $classes = $this->Bookings->Classes->find('list', ['limit' => 200]);
-        $this->set(compact('booking', 'users', 'flights', 'classes'));
+        $this->set(compact('booking', 'users', 'flights', 'Flightclasses'));
     }
 
     /**

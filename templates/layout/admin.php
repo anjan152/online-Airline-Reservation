@@ -34,7 +34,8 @@
             <a  rel="noopener" href="/bookings">BOOKINGS</a>
             <a  rel="noopener" href="/users">USERS</a>
             <a  rel="noopener" href="/aircraft-types">AIRCRAFT TYPES</a>
-            
+            <a  rel="noopener" href="/flight-classes">FLIGHT CLASSES</a>
+            <a  rel="noopener" href="/special-fares">SPECIAL FARES</a>
         
             <a  rel="noopener" href="/flight-schedules">FLIGHT SCHEDULES</a>
             <a  rel="noopener" href="/users/logout">LOGOUT</a>
