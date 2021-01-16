@@ -30,13 +30,14 @@
             <a href="<?= $this->Url->build('/') ?>"><span>ONLINE</span>AIRLINE RESERVATION</a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="/flights">FLIGHTS</a>
+        <a rel="noopener" href="/flights">FLIGHTS</a>
+        <a rel="noopener" href="/bookings">BOOKINGS</a>
             
             
             
         
         
-            <a target="_blank" rel="noopener" href="/users/logout">LOGOUT</a>
+            <a  rel="noopener" href="/users/logout">LOGOUT</a>
         </div>
     </nav>
  
