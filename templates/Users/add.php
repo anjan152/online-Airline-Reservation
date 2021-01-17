@@ -18,8 +18,8 @@
                     echo $this->Form->control('last_name');
                     echo $this->Form->control('address');
                     echo $this->Form->control('passport_details');
-                    echo $this->Form->control('state');
-                    echo $this->Form->control('country');
+                    echo $this->Form->control('state',['options'=>['kerala'=>'kerala','Tamil Nadu'=>'Tamil Nadu','Karnataka'=>'Karnataka'],'empty'=>false]);
+                    echo $this->Form->control('country',['options'=>['INDIA'=>'INDIA'],'empty'=>false]);
                 
                 ?>
             </fieldset>

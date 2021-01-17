@@ -40,6 +40,10 @@ class FlightClassesTable extends Table
         $this->setTable('flight_classes');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+        $this->hasMany('Bookings', [
+            'foreignKey' => 'class_id',
+        ]);
+   
     }
 
     /**

@@ -98,7 +98,7 @@ class BookingsTable extends Table
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'), ['errorField' => 'user_id']);
         $rules->add($rules->existsIn(['flight_id'], 'Flights'), ['errorField' => 'flight_id']);
-        $rules->add($rules->existsIn(['class_id'], 'Classes'), ['errorField' => 'class_id']);
+        $rules->add($rules->existsIn(['class_id'], ' FlightClasses'), ['errorField' => 'class_id']);
 
         return $rules;
     }
