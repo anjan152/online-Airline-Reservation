@@ -60,17 +60,24 @@ class FlightClassesTable extends Table
 
         $validator
             ->scalar('class')
-            ->maxLength('class', 20)
-            ->allowEmptyString('class');
+            ->maxLength('class', 20);
+            
 
         $validator
             ->numeric('additional_charge')
-            ->allowEmptyString('additional_charge');
+            >add('additional_charge',[
+                'checkCharge'=>[
+                    'rule'=>['comparison','>=',0],
+                    'message'=>'chargr must be greater than or equal to 0'
+                ]
+            ]);
+            
+            
 
         $validator
             ->scalar('additional_facilities')
-            ->maxLength('additional_facilities', 40)
-            ->allowEmptyString('additional_facilities');
+            ->maxLength('additional_facilities', 40);
+            
 
         return $validator;
     }

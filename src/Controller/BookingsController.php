@@ -112,4 +112,29 @@ class BookingsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function buy($id=null,$classId)
+    {
+        $this->Authorization->skipAuthorization();
+ 
+        $booking=$this->Bookings->newEmptyEntity();
+        $booking->flight_id=$id;
+        $user=$this->Authentication->getIdentity();
+        $booking->user_id=$user->id;
+        $booking->frequent_flyer_discount=10;
+        $booking->class_id=$classId;
+        $booking->seat_no=1;
+        if($this->Bookings->save($booking))
+        {
+            $this->Flash->success(__('The flight has been booked.'));
+
+        }
+        else
+        {
+        $this->Flash->error(__('The flight could not be booked. Please, try again.'));
+        }
+        return $this->redirect(['action'=>'index']);
+        
+
+    }
+
 }

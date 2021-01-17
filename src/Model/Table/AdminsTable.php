@@ -52,7 +52,12 @@ class AdminsTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            >add('id',[
+                'id'=>[
+                    'rule'=>['comparison','>=',1],
+                    'message'=>'id must be greater than or equal to 1'
+                ]
+            ]);
 
         $validator
             ->scalar('username')
@@ -61,12 +66,12 @@ class AdminsTable extends Table
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 15)
-            ->allowEmptyString('password');
+            ->maxLength('password', 15);
+            
 
         $validator
-            ->email('email')
-            ->allowEmptyString('email');
+            ->email('email');
+            
 
         return $validator;
     }

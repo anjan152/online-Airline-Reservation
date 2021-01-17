@@ -52,7 +52,7 @@
 
     
     ?>
-    <?= $this->Form->postLink(__('Book'), ['action' => 'buy', $flight->id], ['confirm' => __('Are you sure you want to book this flight ?')]) ?>
+    <?= $this->Form->postLink(__('Book'), ['controller'=>'FlightClasses','action' => 'select', $flight->id], ['confirm' => __('Are you sure you want to book this flight ?')]) ?>
     <?php  } ?>
                     </td>
                 </tr>

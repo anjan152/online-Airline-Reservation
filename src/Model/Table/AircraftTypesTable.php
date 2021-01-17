@@ -58,8 +58,12 @@ class AircraftTypesTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmptyString('id', null, 'create');
-
+            >add('id',[
+                'id'=>[
+                    'rule'=>['comparison','>=',1],
+                    'message'=>'id must be greater than or equal to  1'
+                ]
+            ]);
         $validator
             ->scalar('aircraft_name')
             ->maxLength('aircraft_name', 60)

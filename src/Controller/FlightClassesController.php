@@ -23,6 +23,15 @@ class FlightClassesController extends AppController
 
         $this->set(compact('flightClasses'));
     }
+    public function select($flightId)
+    {
+        $this->Authorization->skipAuthorization();
+        $flightClasses = $this->paginate($this->FlightClasses);
+
+        $this->set(compact('flightId','flightClasses'));
+    }
+
+
 
     /**
      * View method
