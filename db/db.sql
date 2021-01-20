@@ -12,3 +12,5 @@ drop table if exists aircraft_types;
 create table aircraft_types(id integer primary key autoincrement,aircraft_name varchar(60),first_class integer,second_class integer,third_class integer);
 drop table if exists flight_schedules;
 create table flight_schedules(id integer primary key autoincrement,flight_id integer,day varchar(20),departs datetime,arrives datetime);
+
+
