@@ -9,9 +9,7 @@
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Html->link(__('Edit Flight Class'), ['action' => 'edit', $flightClass->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Flight Class'), ['action' => 'delete', $flightClass->id], ['confirm' => __('Are you sure you want to delete # {0}?', $flightClass->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Flight Classes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Flight Class'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">

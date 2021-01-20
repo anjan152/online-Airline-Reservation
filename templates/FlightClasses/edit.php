@@ -8,11 +8,7 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $flightClass->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $flightClass->id), 'class' => 'side-nav-item']
-            ) ?>
+           
             <?= $this->Html->link(__('List Flight Classes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>

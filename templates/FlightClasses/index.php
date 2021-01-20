@@ -5,7 +5,6 @@
  */
 ?>
 <div class="flightClasses index content">
-    <?= $this->Html->link(__('New Flight Class'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Flight Classes') ?></h3>
     <div class="table-responsive">
         <table>
@@ -28,7 +27,6 @@
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $flightClass->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $flightClass->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $flightClass->id], ['confirm' => __('Are you sure you want to delete # {0}?', $flightClass->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

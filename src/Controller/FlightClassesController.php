@@ -82,7 +82,7 @@ class FlightClassesController extends AppController
      */
     public function edit($id = null)
     {
-        $flightClasses = $this->FlightClasses->newEmptyEntity();
+        $flightClass= $this->FlightClasses->newEmptyEntity();
         $this->Authorization->authorize($flightClass);
 
         $flightClass = $this->FlightClasses->get($id, [
