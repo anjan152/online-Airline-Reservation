@@ -19,7 +19,6 @@
                     <th><?= $this->Paginator->sort('passport_details') ?></th>
                     <th><?= $this->Paginator->sort('state') ?></th>
                     <th><?= $this->Paginator->sort('country') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -27,17 +26,13 @@
                 <tr>
                     <td><?= $this->Number->format($user->id) ?></td>
                     <td><?= h($user->email) ?></td>
-                    <td><?= h($user->first_name) ?></td>
-                    <td><?= h($user->last_name) ?></td>
-                    <td><?= h($user->address) ?></td>
-                    <td><?= h($user->dob) ?></td>
-                    <td><?= h($user->passport_details) ?></td>
-                    <td><?= h($user->state) ?></td>
-                    <td><?= h($user->country) ?></td>
-                    <td class="actions">
-                       
-                        <!-- <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> -->
-                    </td>
+                    <td><?= h($user->first_name ? $user->first_name : "N/A") ?></td>
+                    <td><?= h($user->last_name ? $user->last_name  : "N/A") ?></td>
+                    <td><?= h($user->address ? $user->address : "N/A") ?></td>
+                    <td><?= h($user->dob ? $user->dob : "N/A") ?></td>
+                    <td><?= h($user->passport_details ? $user->passport_details : "N/A") ?></td>
+                    <td><?= h($user->state ? $user->state : "N/A") ?></td>
+                    <td><?= h($user->country ? $user->country : "N/A") ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
