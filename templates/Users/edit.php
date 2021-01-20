@@ -30,7 +30,6 @@
                     echo $this->Form->control('passport_details');
                     echo $this->Form->control('state');
                     echo $this->Form->control('country');
-                    echo $this->Form->control('is_admin');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

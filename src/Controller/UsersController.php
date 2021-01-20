@@ -87,6 +87,7 @@ public function logout()
      */
     public function view($id = null)
     {
+        
         $user = $this->Users->get($id, [
             'contain' => ['Bookings'],
         ]);
@@ -125,6 +126,8 @@ public function logout()
      */
     public function edit($id = null)
     {
+    $this->Authorization->skipAuthorization();
+
         $user = $this->Users->get($id, [
             'contain' => [],
         ]);

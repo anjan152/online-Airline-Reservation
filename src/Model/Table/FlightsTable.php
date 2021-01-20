@@ -70,22 +70,27 @@ class FlightsTable extends Table
 
         $validator
             ->numeric('price')
-            ->allowEmptyString('price');
+            ->add('price',[
+                'minPrice'=>[
+                    'rule'=>['comparison','>=',0],
+                    'message'=>'Must Be At Least 0'
+                ]
+            ]);
 
         $validator
             ->scalar('from_place')
             ->maxLength('from_place', 50)
-            ->allowEmptyString('from_place');
+           ;
 
         $validator
             ->scalar('to_place')
             ->maxLength('to_place', 50)
-            ->allowEmptyString('to_place');
+            ;
 
         $validator
             ->scalar('counter')
             ->maxLength('counter', 30)
-            ->allowEmptyString('counter');
+            ;
 
         return $validator;
     }

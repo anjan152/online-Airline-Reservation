@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Model\Table;
@@ -58,28 +59,43 @@ class AircraftTypesTable extends Table
     {
         $validator
             ->integer('id')
-            >add('id',[
-                'id'=>[
-                    'rule'=>['comparison','>=',1],
-                    'message'=>'id must be greater than or equal to  1'
-                ]
-            ]);
+            ->allowEmptyString('id', null, 'create');
         $validator
             ->scalar('aircraft_name')
             ->maxLength('aircraft_name', 60)
-            ->allowEmptyString('aircraft_name');
+            ->add('seat_no', [
+                'minVal' => [
+                    'rule' => ['comparison', '>=', 0],
+                    'message' => 'Must Be At Least 0'
+                ]
+            ]);
 
         $validator
             ->integer('first_class')
-            ->allowEmptyString('first_class');
+            ->add('seat_no', [
+                'minVal' => [
+                    'rule' => ['comparison', '>=', 0],
+                    'message' => 'Must Be At Least 0'
+                ]
+            ]);
 
         $validator
             ->integer('second_class')
-            ->allowEmptyString('second_class');
+            ->add('seat_no', [
+                'minVal' => [
+                    'rule' => ['comparison', '>=', 0],
+                    'message' => 'Must Be At Least 0'
+                ]
+            ]);
 
         $validator
             ->integer('third_class')
-            ->allowEmptyString('third_class');
+            ->add('seat_no', [
+                'minVal' => [
+                    'rule' => ['comparison', '>=', 0],
+                    'message' => 'Must Be At Least 0'
+                ]
+            ]);
 
         return $validator;
     }

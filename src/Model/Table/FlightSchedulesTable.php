@@ -63,15 +63,15 @@ class FlightSchedulesTable extends Table
         $validator
             ->scalar('day')
             ->maxLength('day', 20)
-            ->allowEmptyString('day');
+            ;
 
         $validator
             ->dateTime('departs')
-            ->allowEmptyDateTime('departs');
+            ;
 
         $validator
             ->dateTime('arrives')
-            ->allowEmptyDateTime('arrives');
+            ;
 
         return $validator;
     }

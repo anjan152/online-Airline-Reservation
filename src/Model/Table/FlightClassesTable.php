@@ -65,7 +65,7 @@ class FlightClassesTable extends Table
 
         $validator
             ->numeric('additional_charge')
-            >add('additional_charge',[
+            ->add('additional_charge',[
                 'checkCharge'=>[
                     'rule'=>['comparison','>=',0],
                     'message'=>'chargr must be greater than or equal to 0'

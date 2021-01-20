@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Model\Table;
@@ -61,43 +62,36 @@ class UsersTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->email('email')
-            ->allowEmptyString('email');
+            ->email('email');
 
         $validator
             ->scalar('password')
             ->maxLength('password', 15)
-            ->allowEmptyString('password');
+            ->minLength('password', 8);
 
         $validator
             ->scalar('first_name')
-            ->maxLength('first_name', 20)
-            ->allowEmptyString('first_name');
+            ->maxLength('first_name', 20);
 
         $validator
             ->scalar('last_name')
-            ->maxLength('last_name', 20)
-            ->allowEmptyString('last_name');
+            ->maxLength('last_name', 20);
 
         $validator
             ->scalar('address')
-            ->maxLength('address', 40)
-            ->allowEmptyString('address');
+            ->maxLength('address', 40);
 
         $validator
             ->scalar('passport_details')
-            ->maxLength('passport_details', 30)
-            ->allowEmptyString('passport_details');
+            ->maxLength('passport_details', 30);
 
         $validator
             ->scalar('state')
-            ->maxLength('state', 30)
-            ->allowEmptyString('state');
+            ->maxLength('state', 30);
 
         $validator
             ->scalar('country')
-            ->maxLength('country', 30)
-            ->allowEmptyString('country');
+            ->maxLength('country', 30);
 
         $validator
             ->boolean('is_admin')

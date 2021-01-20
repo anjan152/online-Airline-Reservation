@@ -35,7 +35,6 @@
             <a  rel="noopener" href="/users">USERS</a>
             <a  rel="noopener" href="/aircraft-types">AIRCRAFTS</a>
             <a  rel="noopener" href="/flight-classes">CLASSES</a>
-        
             <a  rel="noopener" href="/flight-schedules">SCHEDULES</a>
             <a  rel="noopener" href="/users/logout">LOGOUT</a>
         </div>

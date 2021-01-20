@@ -66,16 +66,11 @@ class BookingsTable extends Table
     {
         $validator
             ->integer('id')
-            >add('age',[
-                'checkAge'=>[
-                    'rule'=>['comparison','>=',18],
-                    'message'=>'age must be minimum of 18'
-                ]
-            ]);
+            ->allowEmptyString('id', null, 'create');
 
         $validator
             ->date('date')
-            ->allowEmptyDate('date');
+            ;
 
         $validator
             ->integer('status')
@@ -83,11 +78,16 @@ class BookingsTable extends Table
 
         $validator
             ->numeric('frequent_flyer_discount')
-            ->allowEmptyString('frequent_flyer_discount');
+            ;
 
         $validator
             ->integer('seat_no')
-            ->allowEmptyString('seat_no');
+            ->add('seat_no',[
+                'minVal'=>[
+                    'rule'=>['comparison','>=',1],
+                    'message'=>'Invalid Seat Number'
+                ]
+            ]);
 
         return $validator;
     }

@@ -8,8 +8,8 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('Edit Account'), ['action' => 'edit', $user->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('Delete Account'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']) ?>
             
         </div>
     </aside>
@@ -21,10 +21,7 @@
                     <th><?= __('Email') ?></th>
                     <td><?= h($user->email) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Password') ?></th>
-                    <td><?= h($user->password) ?></td>
-                </tr>
+                
                 <tr>
                     <th><?= __('First Name') ?></th>
                     <td><?= h($user->first_name) ?></td>
@@ -53,10 +50,7 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Is Admin') ?></th>
-                    <td><?= $user->is_admin ? __('Yes') : __('No'); ?></td>
-                </tr>
+               
             </table>
             <div class="related">
                 <h4><?= __('Related Bookings') ?></h4>
