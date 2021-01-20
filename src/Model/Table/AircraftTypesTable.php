@@ -47,6 +47,7 @@ class AircraftTypesTable extends Table
         $this->hasMany('Flights', [
             'foreignKey' => 'aircraft_type_id',
             'dependent' => true,
+            'cascadeCallbacks' => true,
         ]);
     }
 
