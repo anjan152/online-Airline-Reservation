@@ -23,10 +23,10 @@
                 <?php foreach ($flightSchedules as $flightSchedule): ?>
                 <tr>
                     <td><?= $this->Number->format($flightSchedule->id) ?></td>
-                    <td><?= $flightSchedule->has('flight') ? $this->Html->link($flightSchedule->flight->id, ['controller' => 'Flights', 'action' => 'view', $flightSchedule->flight->id]) : '' ?></td>
+                    <td><?= $flightSchedule->has('flight') ? $this->Html->link($flightSchedule->flight->flight_name, ['controller' => 'Flights', 'action' => 'view', $flightSchedule->flight->id]) : '' ?></td>
                     <td><?= h($flightSchedule->day) ?></td>
-                    <td><?= h($flightSchedule->departs) ?></td>
-                    <td><?= h($flightSchedule->arrives) ?></td>
+                    <td><?= h(substr($flightSchedule->departs, 7)) ?></td>
+                    <td><?= h(substr($flightSchedule->arrives, 7)) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $flightSchedule->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $flightSchedule->id]) ?>
