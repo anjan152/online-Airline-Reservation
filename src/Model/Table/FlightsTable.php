@@ -53,6 +53,7 @@ class FlightsTable extends Table
         ]);
         $this->hasMany('FlightSchedules', [
             'foreignKey' => 'flight_id',
+            'dependent' => true,
         ]);
     }
 

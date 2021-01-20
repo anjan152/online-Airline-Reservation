@@ -31,6 +31,12 @@ class AircraftTypePolicy
             // logged in users can delete their own articles.
             return $this->isAdmin($user);
         }
+
+        public function canDelete(IdentityInterface $user, AircraftType $aircraftType)
+        {
+            // logged in users can delete their own articles.
+            return $this->isAdmin($user);
+        }
     
         protected function isAdmin(IdentityInterface $user)
         {
