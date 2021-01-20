@@ -17,8 +17,16 @@
             <fieldset>
                 <legend><?= __('Add Flight Schedule') ?></legend>
                 <?php
-                    echo $this->Form->control('flight_id', ['options' => $flights, 'empty' => true]);
-                    echo $this->Form->control('day');
+                    echo $this->Form->control('flight_id', ['options' => $flights, 'empty' => false]);
+                    echo $this->Form->control('day',['options'=>[
+                        'Monday'=>'Monday',
+                        'Tuesday'=>'Tuesday',
+                        'Wednesday'=>'Wednesday',
+                        'Thursday'=>'Thursday',
+                        'Friday'=>'Friday',
+                        'Saturday'=>'Saturday',
+                        'Sunday'=>'Sunday',
+                    ],'empty'=>false]);
                     echo $this->Form->control('departs', ['empty' => true]);
                     echo $this->Form->control('arrives', ['empty' => true]);
                 ?>

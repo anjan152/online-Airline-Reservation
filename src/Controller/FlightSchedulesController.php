@@ -51,7 +51,7 @@ class FlightSchedulesController extends AppController
      */
     public function add()
     {
-        $flightSchedule = $this->FlightSchedule->newEmptyEntity();
+        $flightSchedule = $this->FlightSchedules->newEmptyEntity();
         $this->Authorization->authorize($flightSchedule);
  
         $flightSchedule = $this->FlightSchedules->newEmptyEntity();
@@ -77,7 +77,7 @@ class FlightSchedulesController extends AppController
      */
     public function edit($id = null)
     {
-        $flightSchedule = $this->FlightSchedule->newEmptyEntity();
+        $flightSchedule = $this->FlightSchedules->newEmptyEntity();
         $this->Authorization->authorize($flightSchedule);
  
         $flightSchedule = $this->FlightSchedules->get($id, [
@@ -105,7 +105,7 @@ class FlightSchedulesController extends AppController
      */
     public function delete($id = null)
     {
-        $flightSchedule = $this->FlightSchedule->newEmptyEntity();
+        $flightSchedule = $this->FlightSchedules->newEmptyEntity();
         $this->Authorization->authorize($flightSchedule);
  
         $this->request->allowMethod(['post', 'delete']);
