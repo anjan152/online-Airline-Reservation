@@ -23,9 +23,9 @@
                 <legend><?= __('Edit Aircraft Type') ?></legend>
                 <?php
                     echo $this->Form->control('aircraft_name');
-                    echo $this->Form->control('first_class');
-                    echo $this->Form->control('second_class');
-                    echo $this->Form->control('third_class');
+                    echo $this->Form->control('first_class', ['label' => "First Class Seats"]);
+                    echo $this->Form->control('second_class', ['label' => "Second Class Seats"]);
+                    echo $this->Form->control('third_class', ['label' => "Third Class Seats"]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
