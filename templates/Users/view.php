@@ -34,6 +34,12 @@
                     <th><?= __('Address') ?></th>
                     <td><?= h($user->address) ?></td>
                 </tr>
+
+                <tr>
+                    <th><?= __('DOB') ?></th>
+                    <td><?= h($user->dob) ?></td>
+                </tr>
+
                 <tr>
                     <th><?= __('Passport Details') ?></th>
                     <td><?= h($user->passport_details) ?></td>

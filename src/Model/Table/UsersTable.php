@@ -41,7 +41,7 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('users');
-        $this->setDisplayField('id');
+        $this->setDisplayField('first_name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Bookings', [
@@ -96,6 +96,9 @@ class UsersTable extends Table
         $validator
             ->boolean('is_admin')
             ->allowEmptyString('is_admin');
+
+        $validator
+            ->date('dob');
 
         return $validator;
     }

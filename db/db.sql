@@ -1,9 +1,9 @@
 drop table if exists flights;
-create table flights(id integer primary key autoincrement,aircraft_type_id integer,price real,from_place varchar(50),to_place varchar(50),counter varchar(30));
+create table flights(id integer primary key autoincrement,flight_name varchar(50), aircraft_type_id integer,price real,from_place varchar(50),to_place varchar(50),counter varchar(30));
 drop table if exists bookings;
 create table bookings(id integer primary key autoincrement,user_id integer,date date,flight_id integer,status integer, frequent_flyer_discount real,class_id integer,seat_no integer);
 drop table if exists users;
-create table users(id integer primary key autoincrement,email varchar(50),password varchar(15),first_name varchar(20),last_name varchar(20),address varchar(40),passport_details varchar(30),state varchar(30),country varchar(30),is_admin boolean default 0);
+create table users(id integer primary key autoincrement,email varchar(50),password varchar(15),first_name varchar(20),last_name varchar(20),dob date, address varchar(40),passport_details varchar(30),state varchar(30),country varchar(30),is_admin boolean default 0);
 drop table if exists special_fares;
 create table special_fares(id integer primary key autoincrement,category varchar(30),discount_percentage real);
 drop table if exists flight_classes;

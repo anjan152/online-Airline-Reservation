@@ -22,6 +22,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
+                    <th><?= $this->Paginator->sort('flight_name') ?></th>
                     <th><?= $this->Paginator->sort('aircraft_type_id') ?></th>
                     <th><?= $this->Paginator->sort('price') ?></th>
                     <th><?= $this->Paginator->sort('from_place') ?></th>
@@ -34,6 +35,8 @@
                 <?php foreach ($flights as $flight): ?>
                 <tr>
                     <td><?= $this->Number->format($flight->id) ?></td>
+                    <td><?= h($flight->flight_name) ?></td>
+
                     <td><?= $flight->has('aircraft_type') ? $this->Html->link($flight->aircraft_type->id, ['controller' => 'AircraftTypes', 'action' => 'view', $flight->aircraft_type->id]) : '' ?></td>
                     <td><?= $this->Number->format($flight->price) ?></td>
                     <td><?= h($flight->from_place) ?></td>

@@ -33,6 +33,7 @@ class Flight extends Entity
     protected $_accessible = [
         'aircraft_type_id' => true,
         'price' => true,
+        'flight_name' => true,
         'from_place' => true,
         'to_place' => true,
         'counter' => true,

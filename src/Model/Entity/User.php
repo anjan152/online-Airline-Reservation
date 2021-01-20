@@ -42,6 +42,7 @@ class User extends Entity
         'address' => true,
         'passport_details' => true,
         'state' => true,
+        'dob' => true,
         'country' => true,
         'is_admin' => true,
         'bookings' => true,

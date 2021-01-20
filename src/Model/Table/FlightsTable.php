@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Model\Table;
@@ -42,7 +43,7 @@ class FlightsTable extends Table
         parent::initialize($config);
 
         $this->setTable('flights');
-        $this->setDisplayField('id');
+        $this->setDisplayField('flight_name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('AircraftTypes', [
@@ -71,28 +72,30 @@ class FlightsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
+            ->scalar('flight_name')
+            ->maxLength('flight_name', 50);
+
+
+        $validator
             ->numeric('price')
-            ->add('price',[
-                'minPrice'=>[
-                    'rule'=>['comparison','>=',0],
-                    'message'=>'Must Be At Least 0'
+            ->add('price', [
+                'minPrice' => [
+                    'rule' => ['comparison', '>=', 0],
+                    'message' => 'Must Be At Least 0'
                 ]
             ]);
 
         $validator
             ->scalar('from_place')
-            ->maxLength('from_place', 50)
-           ;
+            ->maxLength('from_place', 50);
 
         $validator
             ->scalar('to_place')
-            ->maxLength('to_place', 50)
-            ;
+            ->maxLength('to_place', 50);
 
         $validator
             ->scalar('counter')
-            ->maxLength('counter', 30)
-            ;
+            ->maxLength('counter', 30);
 
         return $validator;
     }

@@ -13,7 +13,8 @@
                 <legend><?= __('Edit Flight') ?></legend>
                 <?php
                     echo $this->Form->control('aircraft_type_id', ['options' => $aircraftTypes, 'empty' => true]);
-                    echo $this->Form->control('price');
+                    echo $this->Form->control('flight_name');
+                    echo $this->Form->control('price', ['label' => "Base Price"]);
                     echo $this->Form->control('from_place');
                     echo $this->Form->control('to_place');
                     echo $this->Form->control('counter');

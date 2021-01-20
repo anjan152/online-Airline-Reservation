@@ -15,6 +15,7 @@
                     <th><?= $this->Paginator->sort('first_name') ?></th>
                     <th><?= $this->Paginator->sort('last_name') ?></th>
                     <th><?= $this->Paginator->sort('address') ?></th>
+                    <th><?= $this->Paginator->sort('dob') ?></th>
                     <th><?= $this->Paginator->sort('passport_details') ?></th>
                     <th><?= $this->Paginator->sort('state') ?></th>
                     <th><?= $this->Paginator->sort('country') ?></th>
@@ -29,6 +30,7 @@
                     <td><?= h($user->first_name) ?></td>
                     <td><?= h($user->last_name) ?></td>
                     <td><?= h($user->address) ?></td>
+                    <td><?= h($user->dob) ?></td>
                     <td><?= h($user->passport_details) ?></td>
                     <td><?= h($user->state) ?></td>
                     <td><?= h($user->country) ?></td>
