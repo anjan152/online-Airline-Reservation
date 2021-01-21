@@ -83,7 +83,12 @@ class UsersTable extends Table
 
         $validator
             ->scalar('passport_details')
-            ->maxLength('passport_details', 30);
+            ->add('passport_details', [
+                'checkPassport' => [
+                    'rule' => ['custom', "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$"],
+                    'message' => 'Invalid Passport Details'
+                ]
+            ]);
 
         $validator
             ->scalar('state')
