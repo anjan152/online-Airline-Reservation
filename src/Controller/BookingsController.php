@@ -113,6 +113,23 @@ class BookingsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function cancel($id = null)
+    {
+        $this->Authorization->skipAuthorization();
+
+        $this->request->allowMethod(['post']);
+        $booking = $this->Bookings->get($id);
+        $booking->status = 0;
+        if ($this->Bookings->save($booking)) {
+            $this->Flash->success(__('The booking has been cancelled.'));
+        } else {
+            $this->Flash->error(__('The booking could not be cancelled. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
     public function buy($id = null, $classId, $scheduleId)
     {
         $this->Authorization->skipAuthorization();

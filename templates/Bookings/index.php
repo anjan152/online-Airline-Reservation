@@ -19,6 +19,7 @@
                     <th><?= $this->Paginator->sort('class_id') ?></th>
                     <th><?= $this->Paginator->sort('frequent_flyer_discount') ?></th>
                     <th><?= $this->Paginator->sort('date') ?></th>
+                    <th><?= $this->Paginator->sort('status') ?></th>
 
 
 
@@ -36,9 +37,12 @@
                         <td><?= $booking->flight_class->class ?></td>
                         <td>Rs<?= $this->Number->format($booking->frequent_flyer_discount) ?></td>
                         <td><?= h($booking->date) ?></td>
+                        <td><?= h($booking->status === null || $booking->status === 1 ? "Active" : "Cancelled") ?></td>
 
                         <td class="actions">
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $booking->id], ['confirm' => __('Are you sure you want to delete # {0}?', $booking->id)]) ?>
+                            <?php if ($booking->status === null || $booking->status === 1) { ?>
+                                <?= $this->Form->postLink(__('Cancel'), ['action' => 'cancel', $booking->id], ['confirm' => __('Are you sure you want to cancel? (No refunds will be given)', $booking->id)]) ?>
+                            <?php } ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
