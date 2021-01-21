@@ -18,6 +18,7 @@
                     <th><?= $this->Paginator->sort('flight_id') ?></th>
                     <th><?= $this->Paginator->sort('class_id') ?></th>
                     <th><?= $this->Paginator->sort('frequent_flyer_discount') ?></th>
+                    <th><?= $this->Paginator->sort('total_cost') ?></th>
                     <th><?= $this->Paginator->sort('date') ?></th>
                     <th><?= $this->Paginator->sort('status') ?></th>
 
@@ -35,12 +36,13 @@
                         <td><?= $booking->has('flight') ? $this->Html->link($booking->flight->flight_name, ['controller' => 'Flights', 'action' => 'view', $booking->flight->id]) : '' ?></td>
 
                         <td><?= $booking->flight_class->class ?></td>
-                        <td>Rs<?= $this->Number->format($booking->frequent_flyer_discount) ?></td>
+                        <td>Rs <?= $this->Number->format($booking->frequent_flyer_discount) ?></td>
+                        <td>Rs <?= $this->Number->format($booking->total_cost) ?></td>
                         <td><?= h($booking->date) ?></td>
-                        <td><?= h($booking->status === null || $booking->status === 1 ? "Active" : "Cancelled") ?></td>
+                        <td><?= h($booking->status == 1 ? "Active" : "Cancelled") ?></td>
 
                         <td class="actions">
-                            <?php if ($booking->status === null || $booking->status === 1) { ?>
+                            <?php if ($booking->status == 1) { ?>
                                 <?= $this->Form->postLink(__('Cancel'), ['action' => 'cancel', $booking->id], ['confirm' => __('Are you sure you want to cancel? (No refunds will be given)', $booking->id)]) ?>
                             <?php } ?>
                         </td>

@@ -83,6 +83,9 @@ class BookingsTable extends Table
             ->numeric('flight_schedule_id');
 
         $validator
+            ->numeric('total_cost');
+
+        $validator
             ->integer('seat_no')
             ->add('seat_no', [
                 'minVal' => [

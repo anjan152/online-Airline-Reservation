@@ -43,6 +43,8 @@ class Booking extends Entity
         'user' => true,
         'flight' => true,
         'class' => true,
-        'flight_schedule_id' => true
+        'flight_schedule_id' => true,
+        'flight_schedule' => true,
+        'total_cost' => true,
     ];
 }

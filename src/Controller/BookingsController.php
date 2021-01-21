@@ -160,7 +160,9 @@ class BookingsController extends AppController
             $booking->class_id = $classId;
             $booking->flight_schedule_id = $scheduleId;
             $booking->seat_no = $lastSeatNo + 1;
+            $booking->total_cost = $flight->price + $flightClass->additional_charge - $discount;
             $booking->date = date("Y/m/d");
+
             if ($this->Bookings->save($booking)) {
                 $this->Flash->success(__('The flight has been booked.'));
             } else {
