@@ -28,6 +28,20 @@ class BookingsController extends AppController
         $this->set(compact('bookings'));
     }
 
+    public function payment($flightId, $classId, $scheduleId)
+    {
+        $this->Authorization->skipAuthorization();
+        $user = $this->Authentication->getIdentity();
+        $discount = $this->getFrequentFlierDiscount($user->id);
+        $flight = $this->Bookings->Flights->get($flightId);
+        $flightClass = $this->Bookings->FlightClasses->get($classId);
+        $aircraft = $this->Bookings->Flights->AircraftTypes->get($flight->aircraft_type_id);
+
+        $totalCost = $flight->price + $flightClass->additional_charge - $discount;
+
+        $this->set(compact('flightId', 'classId', 'scheduleId', 'totalCost'));
+    }
+
     /**
      * View method
      *
