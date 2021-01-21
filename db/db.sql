@@ -5,7 +5,6 @@ create table bookings(id integer primary key autoincrement,user_id integer,date 
 drop table if exists users;
 create table users(id integer primary key autoincrement,email varchar(50),password varchar(15),first_name varchar(20),last_name varchar(20),dob date, address varchar(40),passport_details varchar(30),state varchar(30),country varchar(30),is_admin boolean default 0);
 drop table if exists special_fares;
-create table special_fares(id integer primary key autoincrement,category varchar(30),discount_percentage real);
 drop table if exists flight_classes;
 create table flight_classes(id integer primary key autoincrement,class varchar(20),additional_charge real,additional_facilities varchar(40));
 drop table if exists aircraft_types;
