@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Model\Table;
@@ -69,23 +70,24 @@ class BookingsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->date('date')
-            ;
+            ->date('date');
 
         $validator
             ->integer('status')
             ->allowEmptyString('status');
 
         $validator
-            ->numeric('frequent_flyer_discount')
-            ;
+            ->numeric('frequent_flyer_discount');
+
+        $validator
+            ->numeric('flight_schedule_id');
 
         $validator
             ->integer('seat_no')
-            ->add('seat_no',[
-                'minVal'=>[
-                    'rule'=>['comparison','>=',1],
-                    'message'=>'Invalid Seat Number'
+            ->add('seat_no', [
+                'minVal' => [
+                    'rule' => ['comparison', '>=', 1],
+                    'message' => 'Invalid Seat Number'
                 ]
             ]);
 
@@ -103,6 +105,6 @@ class BookingsTable extends Table
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'), ['errorField' => 'user_id']);
         $rules->add($rules->existsIn(['flight_id'], 'Flights'), ['errorField' => 'flight_id']);
-          return $rules;
+        return $rules;
     }
 }

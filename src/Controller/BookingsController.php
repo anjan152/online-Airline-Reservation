@@ -112,17 +112,19 @@ class BookingsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    public function buy($id=null,$classId)
+    public function buy($id=null,$classId, $scheduleId)
     {
         $this->Authorization->skipAuthorization();
- 
+        $lastSeatNo = $this->getLastSeatNumber($id);
         $booking=$this->Bookings->newEmptyEntity();
         $booking->flight_id=$id;
         $user=$this->Authentication->getIdentity();
         $booking->user_id=$user->id;
         $booking->frequent_flyer_discount=10;
         $booking->class_id=$classId;
-        $booking->seat_no=1;
+        $booking->flight_schedule_id =$scheduleId;
+        $booking->seat_no=$lastSeatNo + 1;
+        $booking->date = date("Y/m/d");
         if($this->Bookings->save($booking))
         {
             $this->Flash->success(__('The flight has been booked.'));
@@ -134,7 +136,13 @@ class BookingsController extends AppController
         }
         return $this->redirect(['action'=>'index']);
         
+    }
 
+    public function getLastSeatNumber($id){
+        $flight = $this->Bookings->Flights->find('all')->where(['Flights.id ='=>$id]);
+        $bookingsCount = $this->Bookings->find('all')->where(['Bookings.flight_id ='=>$id])->count();
+
+        return $bookingsCount;
     }
 
 }

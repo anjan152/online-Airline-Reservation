@@ -19,7 +19,6 @@
                     <th><?= $this->Paginator->sort('class_id') ?></th>
                     <th><?= $this->Paginator->sort('frequent_flyer_discount') ?></th>
                     <th><?= $this->Paginator->sort('date') ?></th>
-                    <th><?= $this->Paginator->sort('status') ?></th>
 
 
 
@@ -30,20 +29,15 @@
                 <?php foreach ($bookings as $booking) : ?>
                     <tr>
                         <td><?= $this->Number->format($booking->id) ?></td>
-                        <td><?= $booking->has('user') ? $this->Html->link($booking->user->id, ['controller' => 'Users', 'action' => 'view', $booking->user->id]) : '' ?></td>
-                        <td><?= $this->Number->format($booking->seat_no) ?></td>
-                        <td><?= $booking->has('flight') ? $this->Html->link($booking->flight->id, ['controller' => 'Flights', 'action' => 'view', $booking->flight->id]) : '' ?></td>
+                        <td><?= $booking->has('user') ? $this->Html->link($booking->user->first_name . " " . $booking->user->last_name, ['controller' => 'Users', 'action' => 'view', $booking->user->id]) : '' ?></td>
+                        <td>Seat <?= $this->Number->format($booking->seat_no) ?></td>
+                        <td><?= $booking->has('flight') ? $this->Html->link($booking->flight->flight_name, ['controller' => 'Flights', 'action' => 'view', $booking->flight->id]) : '' ?></td>
 
-                        <td><?= $this->Number->format($booking->class_id) ?></td>
-                        <td><?= $this->Number->format($booking->frequent_flyer_discount) ?></td>
+                        <td><?= $booking->flight_class->class ?></td>
+                        <td>Rs<?= $this->Number->format($booking->frequent_flyer_discount) ?></td>
                         <td><?= h($booking->date) ?></td>
 
-                        <td><?= $this->Number->format($booking->status) ?></td>
-
-
                         <td class="actions">
-                            <?= $this->Html->link(__('View'), ['action' => 'view', $booking->id]) ?>
-                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $booking->id]) ?>
                             <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $booking->id], ['confirm' => __('Are you sure you want to delete # {0}?', $booking->id)]) ?>
                         </td>
                     </tr>

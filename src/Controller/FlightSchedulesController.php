@@ -27,6 +27,17 @@ class FlightSchedulesController extends AppController
         $this->set(compact('flightSchedules'));
     }
 
+    public function select($flightId, $classId)
+    {
+        $this->paginate = [
+            'contain' => ['Flights'],
+        ];
+        $this->Authorization->skipAuthorization();
+        $flightSchedules = $this->paginate($this->FlightSchedules);
+
+        $this->set(compact('flightSchedules', 'flightId', 'classId'));
+    }
+
     /**
      * View method
      *

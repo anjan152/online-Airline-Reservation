@@ -85,7 +85,7 @@ class UsersTable extends Table
             ->scalar('passport_details')
             ->add('passport_details', [
                 'checkPassport' => [
-                    'rule' => ['custom', "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$"],
+                    'rule' => ['custom', "/^[A-PR-WYa-pr-wy][1-9]\d\s?\d{4}[1-9]$/i"],
                     'message' => 'Invalid Passport Details'
                 ]
             ]);
