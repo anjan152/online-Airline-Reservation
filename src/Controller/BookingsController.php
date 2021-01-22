@@ -19,11 +19,22 @@ class BookingsController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
+
         $this->paginate = [
             'contain' => ['Users', 'Flights', 'FlightClasses'],
         ];
-        $this->Authorization->skipAuthorization();
-        $bookings = $this->paginate($this->Bookings);
+
+        $user = $this->Authentication->getIdentity();
+
+
+        if (!$user->is_admin) {
+            $bookingData = $this->Bookings->find('all')->where(['Bookings.user_id = ' => $user->id])->contain(['Users', 'Flights', 'FlightClasses']);
+        } else {
+            $bookingData = $this->Bookings;
+        }
+
+        $bookings = $this->paginate($bookingData);
 
         $this->set(compact('bookings'));
     }
