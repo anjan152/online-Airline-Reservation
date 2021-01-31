@@ -38,7 +38,7 @@
                         <td><?= $this->Number->format($flight->id) ?></td>
                         <td><?= h($flight->flight_name) ?></td>
 
-                        <td><?= $flight->has('aircraft_type') ? $this->Html->link($flight->aircraft_type->aircraft_name, ['controller' => 'AircraftTypes', 'action' => 'view', $flight->aircraft_type->id]) : '' ?></td>
+                        <td><?= $flight->aircraft_type->aircraft_name?></td>
                         <td><?= $this->Number->format($flight->price) ?></td>
                         <td><?= h($flight->from_place) ?></td>
                         <td><?= h($flight->to_place) ?></td>
